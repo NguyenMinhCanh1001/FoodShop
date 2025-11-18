@@ -141,6 +141,8 @@ const AdminContextProvider = (props) => {
     // Dashboard
     dashData,
     getDashData,
+    
+
   };
 
   return (

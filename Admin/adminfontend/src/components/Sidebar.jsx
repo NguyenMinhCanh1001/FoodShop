@@ -12,7 +12,6 @@ const Sidebar = () => {
   return (
     <div className="min-h-screen bg-white border-r shadow-sm">
       <ul className="text-[#515151] mt-5">
-        {/* Dashboard */}
         <li>
           <NavLink
             className={({ isActive }) =>
@@ -20,7 +19,8 @@ const Sidebar = () => {
                 isActive ? 'bg-[#F2F3FF] border-r-4 border-primary' : ''
               }`
             }
-            to={'/admin-dashboard'}
+            to={'/'}
+            end
           >
             <img src={assets.home_icon} alt="Dashboard" />
             <p className="hidden md:block">Dashboard</p>
@@ -37,7 +37,7 @@ const Sidebar = () => {
             }
             to={'/admin-products'}
           >
-            <img src={assets.box_icon} alt="Products" />
+            <img src={assets.product_icon} alt="Products" className="w-5 h-5 md:w-6 md:h-6" />
             <p className="hidden md:block">Products</p>
           </NavLink>
         </li>
@@ -52,7 +52,7 @@ const Sidebar = () => {
             }
             to={'/admin-orders'}
           >
-            <img src={assets.order_icon} alt="Orders" />
+            <img src={assets.list_icon} alt="Orders" />
             <p className="hidden md:block">Orders</p>
           </NavLink>
         </li>
@@ -67,7 +67,7 @@ const Sidebar = () => {
             }
             to={'/admin-users'}
           >
-            <img src={assets.user_icon} alt="Users" />
+            <img src={assets.people_icon} alt="Users" />
             <p className="hidden md:block">Users</p>
           </NavLink>
         </li>
@@ -82,7 +82,7 @@ const Sidebar = () => {
             }
             to={'/admin-settings'}
           >
-            <img src={assets.settings_icon} alt="Settings" />
+            <img src={assets.appointment_icon} alt="Settings" />
             <p className="hidden md:block">Settings</p>
           </NavLink>
         </li>
