@@ -2,9 +2,9 @@ import validator from "validator";
 import bcrypt from "bcrypt";
 import { v2 as cloudinary } from "cloudinary";
 import jwt from 'jsonwebtoken';
-//mport Product from "../models/productModel.js"
-import Product from "../models/productModel.js";
+import productModel from "../models/productModel.js";
 import orderModel from "../models/orderModel.js";
+import userModel from "../models/userModel.js";
 
 
 // API for admin login
@@ -87,8 +87,7 @@ const orderStatus = async (req, res) =>{
         }
         orderData.status = "cancelled"
         orderData.updatedAt =new Date()
-        const neworderData = new orderModel(orderData)
-        await neworderData.save()
+        await order.save();
         res.json({success:true,message:"Hủy đơn hàng thành công"})
 
     }catch(error){
@@ -98,7 +97,7 @@ const orderStatus = async (req, res) =>{
 }
 const allUser = async(req,res) =>{
     try{
-        const users = await userModel.find({}).select(-password)
+        const users = await userModel.find({}).select('-password')
         res.json({success:true, users})
 
     } catch(error){

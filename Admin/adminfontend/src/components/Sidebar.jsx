@@ -37,7 +37,7 @@ const Sidebar = () => {
             }
             to={'/admin-products'}
           >
-            <img src={assets.product_icon} alt="Products" className="w-5 h-5 md:w-6 md:h-6" />
+            <img src={assets.products_icon} alt="Products" className="w-5 h-5" />
             <p className="hidden md:block">Products</p>
           </NavLink>
         </li>
